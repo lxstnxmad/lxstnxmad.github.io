@@ -1,75 +1,76 @@
 let userSelected = false;
 
-function showForm(index) {
-    if (!userSelected) {
-        userSelected = true;
-        const inputForm = document.getElementById(`inputForm${index}`);
-        inputForm.style.display = "block"; 
-    }
-}
+        // Function to load the initial square state from localStorage
+        function loadSquareState(index) {
+            const square = document.getElementById(`square${index}`);
+            const storedColor = localStorage.getItem(`squareColor${index}`);
+            if (storedColor) {
+                square.style.backgroundColor = storedColor;
+            }
+        }
 
-function submitUsername(index) {
-    const usernameInput = document.getElementById(`usernameInput${index}`);
-    const square = document.getElementById(`square${index}`);
-    const submitButton = document.querySelector(`#square${index} button[type="submit"]`);
-    const username = usernameInput.value;
-    if (username.trim() !== "") {
-        square.style.backgroundColor = "#921bd4";
-        usernameInput.disabled = true;
-        submitButton.style.display = "none";
-        alert(`Username ${username} submitted successfully.`);
-    } else {
-        alert("Please enter a valid username.");
-    }
-}
+        // Function to save the square state to localStorage
+        function saveSquareState(index, color) {
+            localStorage.setItem(`squareColor${index}`, color);
+        }
 
+        // Function to refresh squares at 18:00 Almaty Time
+        function refreshSquares() {
+            const currentTime = new Date();
+            const almatyTime = new Date(currentTime.toLocaleString("en-US", { timeZone: "Asia/Almaty" }));
+            
+            if (almatyTime.getHours() === 18 && almatyTime.getMinutes() === 0) {
+                // Reset the userSelected flag to allow users to select again
+                userSelected = false;
 
+                // Clear the localStorage for square colors
+                for (let index = 1; index <= 3; index++) {
+                    localStorage.removeItem(`squareColor${index}`);
+                }
 
-// Function to check if the current time is past 18:00 Almaty Time
-function isTimeToReset() {
-    const currentTime = new Date();
-    const almatyTime = new Date(
-      currentTime.getFullYear(),
-      currentTime.getMonth(),
-      currentTime.getDate(),
-      18, // Hours
-      0,  // Minutes
-      0   // Seconds
-    );
-  
-    // Check if the current time is past 18:00 Almaty Time
-    return currentTime >= almatyTime;
-  }
-  
-  // Function to reset the squares
-  function resetSquares() {
-    for (let i = 1; i <= 26; i++) {
-      const square = document.getElementById(`square${i}`);
-      const usernameInput = document.getElementById(`usernameInput${i}`);
-      const submitButton = document.querySelector(`#square${i} button[type="submit"]`);
-  
-      // Reset square properties
-      square.style.backgroundColor = "#f7fbdf";
-      usernameInput.value = "";
-      usernameInput.disabled = false;
-      submitButton.style.display = "block";
-    }
-  }
-  
-  // Check if it's time to reset and reset the squares only if not already reset today
-  if (isTimeToReset()) {
-    const lastResetDate = localStorage.getItem('lastResetDate');
-    const today = new Date().toDateString();
-  
-    if (lastResetDate !== today) {
-      // Reset the squares
-      resetSquares();
-  
-      // Update the last reset date in local storage
-      localStorage.setItem('lastResetDate', today);
-    }
-  }
-  
+                // Reset square styles to their initial state
+                for (let index = 1; index <= 3; index++) {
+                    const square = document.getElementById(`square${index}`);
+                    square.style.backgroundColor = ""; // Set to the initial state (empty color)
+                }
+
+                alert("Squares have been refreshed.");
+            }
+        }
+
+        // Check for a refresh every minute
+        setInterval(refreshSquares, 60000);
+
+        // Function to show the form and handle user input
+        function showForm(index) {
+            if (!userSelected) {
+                userSelected = true;
+                const inputForm = document.getElementById(`inputForm${index}`);
+                inputForm.style.display = "block";
+            }
+        }
+
+        // Function to submit the username
+        function submitUsername(index) {
+            const usernameInput = document.getElementById(`usernameInput${index}`);
+            const square = document.getElementById(`square${index}`);
+            const submitButton = document.querySelector(`#square${index} button[type="submit"]`);
+            const username = usernameInput.value;
+            if (username.trim() !== "") {
+                square.style.backgroundColor = "#921bd4";
+                saveSquareState(index, "#921bd4"); // Save the color to localStorage
+                usernameInput.disabled = true;
+                submitButton.style.display = "none";
+                alert(`Username ${username} submitted successfully.`);
+            } else {
+                alert("Please enter a valid username.");
+            }
+        }
+
+        // Load the initial square state
+        for (let index = 1; index <= 3; index++) {
+            loadSquareState(index);
+        }
 
 
 
