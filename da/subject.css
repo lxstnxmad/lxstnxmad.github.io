@@ -1,0 +1,67 @@
+#changeTextButton {
+    padding: 10px 20px;
+    font-size: 40px;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#displayText {
+    font-size: 18px;
+    margin-top: 10px;
+}
+#changeTextButton1 {
+    padding: 10px 20px;
+    font-size: 40px;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#changeTextButton2 {
+    padding: 10px 20px;
+    font-size: 40px;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#changeTextButton3 {
+    padding: 10px 20px;
+    font-size: 40px;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#changeTextButton4 {
+    padding: 10px 20px;
+    font-size: 40px;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#changeTextButton5 {
+    padding: 10px 20px;
+    font-size: 40px;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#changeTextButton6 {
+    padding: 10px 20px;
+    font-size: 40px;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+}
