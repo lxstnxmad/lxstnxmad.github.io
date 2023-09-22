@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const codeInput = document.getElementById("code");
     const submitButton = document.getElementById("submitButton");
     const correctCode = "KTL1992"; 
-    const redirectURL = "subject.html"; 
+    const redirectURL = "subject"; 
 
     codeInput.addEventListener("input", function() {
         if (codeInput.value === correctCode) {
