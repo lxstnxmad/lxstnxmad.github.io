@@ -6,8 +6,8 @@ function loadSquareState(index) {
         square.style.backgroundColor = storedColor;
     }
 
-    // Load and display the saved username
-    const storedUsername = localStorage.getItem(`username${index}`);
+    // Load and display the saved username from the cookie
+    const storedUsername = getCookie(`username${index}`);
     const inputForm = document.getElementById(`inputForm${index}`);
     if (storedUsername) {
         const usernameInput = document.getElementById(`usernameInput${index}`);
@@ -18,7 +18,6 @@ function loadSquareState(index) {
     }
 }
 
-// Function to submit the username
 function submitUsername(index) {
     const usernameInput = document.getElementById(`usernameInput${index}`);
     const square = document.getElementById(`square${index}`);
@@ -26,7 +25,7 @@ function submitUsername(index) {
     if (username.trim() !== "") {
         square.style.backgroundColor = "#921bd4";
         saveSquareState(index, "#921bd4"); // Save the color to localStorage
-        localStorage.setItem(`username${index}`, username); // Save the username
+        setCookie(`username${index}`, username, 365); // Save the username as a cookie for 1 year
         usernameInput.disabled = true;
         const submitButton = document.querySelector(`#square${index} button`);
         submitButton.style.display = "none";
@@ -36,6 +35,7 @@ function submitUsername(index) {
     }
 }
 
+
 // Load the initial square state
 for (let index = 1; index <= 26; index++) {
     loadSquareState(index);
@@ -43,5 +43,25 @@ for (let index = 1; index <= 26; index++) {
 
 
 
+
+
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+
+
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.trim().split('=');
+        if (cookieName === name) {
+            return decodeURIComponent(cookieValue);
+        }
+    }
+    return null;
+}
 
 
