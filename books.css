@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: #293241;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+.welcome-img img{
+    width: 100%;
+  }
+  
+  .welcome {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+  }
+  
+  .welcome h2 {
+    color: #fff;
+    font-size: 8em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .welcome h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #5B0888;
+  }
+  
+  .welcome h2:nth-child(2) {
+    color: #5B0888;
+    animation: animate 4s ease-in-out infinite;
+  }
+  
+  @keyframes animate {
+    0%,
+    100% {
+      clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+  
+  .line {
+    position: relative;
+  }
+  .line img {
+    position: relative;
+    height: 100px;
+    width: 1700px;
+    right: 100px;
+
+  }
+  .description1 {
+      display: flex;
+      color:#5B0888 ;
+      justify-content: center;
+      font-size: medium;
+      transform: translateY(-70px);
+      margin: 0%;
+  }
+
+
+
+
+
+
+
+
+.book-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; 
+  gap: 20px;
+  align-items: center;
+  max-width: 1400px; 
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e5cff7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.description {
+  background-color: #9D76C1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.book-container:hover {
+  transform: scale(1.05);
+}
+
