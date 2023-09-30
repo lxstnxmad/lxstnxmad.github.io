@@ -277,6 +277,6 @@ article:has(:hover, :focus) {
   position: relative;
   left: 200px;
   margin-top: 24px;
-}
+} 
 
 
