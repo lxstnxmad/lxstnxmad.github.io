@@ -264,7 +264,7 @@ article:has(:hover, :focus) {
   overflow: hidden;
   position: absolute;
   white-space: nowrap; 
-  width: 1px;
+  width: 2px;
 }
 
 #article5 {
@@ -277,6 +277,6 @@ article:has(:hover, :focus) {
   position: relative;
   left: 200px;
   margin-top: 24px;
-} 
+}
 
 
