@@ -15,7 +15,7 @@ body {
 }
 #yerassylphoto img{
   width: 46%;
-  position: absolute;
+  position: relative;
   transform: translate(0, -2.125em);
 }
 .overall-introduction {
