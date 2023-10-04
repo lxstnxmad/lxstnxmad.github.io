@@ -19,22 +19,21 @@ body {
   transform: translate(0, -2.125em);
 }
 .overall-introduction {
-  width: 20%; 
-  height: 20%;
   margin-bottom: 5%;
 }
 #yerass {
-  font-size: 100%;
+  font-size: 50%;
   font-weight: 800;
 }
 #yerass2 {
   font-weight: 600;
+  font-size: 50%;
 }
 
 
 .overall-introduction img {
   position: relative;
-  width: 229.5%;
+  width: 46%;
   object-fit: cover; 
   margin-right: 0%;
   transform: translate(110%, -6.4%);
@@ -60,6 +59,7 @@ body {
   position: absolute;
   top: 10%;
   left: 50%;
+  margin-bottom: 0%;
 }
 
 .welcome h2 {
