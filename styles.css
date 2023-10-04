@@ -24,7 +24,7 @@ body {
   margin-bottom: 5%;
 }
 #yerass {
-  font-size: 200%;
+  font-size: 100%;
   font-weight: 800;
 }
 #yerass2 {
@@ -34,11 +34,10 @@ body {
 
 .overall-introduction img {
   position: relative;
-  width: 270%;
-  height: 32.8125em;
+  width: 229.5%;
   object-fit: cover; 
   margin-right: 0%;
-  transform: translate(85.5%, -2.125em);
+  transform: translate(110%, -6.4%);
 }
 
 
@@ -65,7 +64,7 @@ body {
 
 .welcome h2 {
   color: #fff;
-  font-size: 800%;
+  font-size: 400%;
   position: absolute;
   transform: translate(-50%, -50%);
 }
@@ -275,13 +274,11 @@ article:has(:hover, :focus) {
 
 #article5 {
   position: relative;
-  left: 52%;
   margin-top: 1.5em;
 }
 
 #article4 {
   position: relative;
-  left: 52%;
   margin-top: 1.5em;
 }
 
