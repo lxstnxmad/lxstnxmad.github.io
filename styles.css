@@ -22,12 +22,12 @@ body {
   margin-bottom: 5%;
 }
 #yerass {
-  font-size: 50%;
+  font-size: medium;
   font-weight: 800;
 }
 #yerass2 {
   font-weight: 600;
-  font-size: 50%;
+  font-size: small;
 }
 
 
@@ -115,9 +115,9 @@ body {
     display: flex;
     color:black ;
     justify-content: center;
-    font-size: larger;
+    font-size: small;
     transform: translateY(-250%);
-    margin: 0%;
+    margin-bottom: 0.5%;
 }
 
 
