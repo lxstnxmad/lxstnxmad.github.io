@@ -14,17 +14,17 @@ body {
   overflow-x: hidden;
 }
 #yerassylphoto img{
-  width: 43.75em;
+  width: 46%;
   position: absolute;
   transform: translate(0, -2.125em);
 }
 .overall-introduction {
-  width: 18.75em; 
-  height: 12.5em;
-  margin-bottom: 21.875em;
+  width: 20%; 
+  height: 20%;
+  margin-bottom: 5%;
 }
 #yerass {
-  font-size: 3.125em;
+  font-size: 200%;
   font-weight: 800;
 }
 #yerass2 {
@@ -34,7 +34,7 @@ body {
 
 .overall-introduction img {
   position: relative;
-  width: 51.25em;
+  width: 270%;
   height: 32.8125em;
   object-fit: cover; 
   margin-right: 0%;
